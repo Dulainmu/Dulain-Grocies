@@ -12,11 +12,6 @@ body {
     background-position: center;
 }
 
-
-
-
-
-
 /*navbar*/
 
 header {
@@ -92,6 +87,7 @@ header {
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
+    .header{padding:20px;}
     .navbar {
         display: none;
         flex-direction: column;
