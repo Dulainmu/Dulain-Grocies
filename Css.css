@@ -7,12 +7,18 @@
 
 body {
     min-height: 100vh;
-    background: wheat;
+    background:wheat;
     background-size: cover;
     background-position: center;
 }
 
-/* Navbar */
+
+
+
+
+
+/*navbar*/
+
 header {
     position: fixed;
     top: 0;
@@ -33,15 +39,6 @@ header {
     font-weight: 700;
 }
 
-.navbar {
-    list-style: none;
-    display: flex;
-}
-
-.navbar li {
-    margin: 0 5px;
-}
-
 .navbar a {
     position: relative;
     font-size: 18px;
@@ -59,72 +56,66 @@ header {
     width: 0;
     height: 2px;
     background: #fff;
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .navbar a:hover::before {
     width: 100%;
 }
 
-.checkbtn {
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    cursor: pointer;
-    display: none;
+.navbar {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-#check {
-    display: none;
+
+.navbar li a {
+    text-decoration: none;
+    color:white;
+    font-size: 1rem;
 }
 
 .icons img {
     margin-left: 20px;
 }
 
-@media (max-width: 952px) {
-    header {
-        padding: 10px 50px;
-    }
-    .navbar a {
-        font-size: 16px;
-    }
+.hamburger {
+    display: none;
+    cursor: pointer;
 }
 
-@media (max-width: 858px) {
-    .checkbtn {
+.hamburger i {
+    font-size: 1.5rem;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color:seagreen;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .hamburger {
         display: block;
     }
-    .navbar {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        top: 80px;
-        left: -100%;
-        flex-direction: column;
-        background: seagreen;
-        text-align: center;
-        transition: 0.5s;
-    }
-    .navbar li {
-        margin: 20px 0;
-    }
-    #check:checked ~ .navbar {
-        left: 0;
-    }
-    .icons {
-        margin-left: -75px;
-    }
-    .checkbtn{
-        margin-left: 170px;
-        margin-top: 17px;
-    }
-
-    
-  
 }
-
 
 /* Main Page */
 .banner {
@@ -359,63 +350,6 @@ button:hover {
     }
 }
 
-@media (max-width: 480px) {
-    .banner {
-        height: 50vh;
-    }
-
-    .banner h1 {
-        font-size: 2rem;
-    }
-
-    .banner h2 {
-        font-size: 1.2rem;
-    }
-
-    .banner p {
-        font-size: 0.9rem;
-    }
-
-    button {
-        width: 120px;
-        padding: 8px 0px;
-        font-size: 0.9rem;
-    }
-
-    .services {
-        padding: 0 4%;
-    }
-
-    .sub {
-        padding: 10px;
-    }
-
-    .sub img {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-    }
-
-    .content {
-        flex-direction: column;
-    }
-
-    .text {
-        text-align: center;
-    }
-
-    .numberedlist {
-        padding: 10px;
-    }
-
-    .numberedlist h1 {
-        font-size: 18px;
-    }
-
-    .numberedlist li {
-        font-size: 12px;
-    }
-}
 
 /*footer*/
 footer {
@@ -426,10 +360,6 @@ footer {
     margin-top: 20px;
     
 }
-
-
-
-
 /*About page*/
 
 .branch-info {
@@ -497,7 +427,7 @@ footer {
 .card{
     background:white;
     width: 250px;
-    height: 450px;
+    height: 480px;
     margin: 10px;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
     box-sizing: border-box;
@@ -575,12 +505,10 @@ footer {
     color:#08A045;
 }
 
-
-/*Vegetables Page*/
+/* Vegetables Page */
 
 .Vegetablespage {
     width: 100%;
-    height: 115vh;
     padding: 0 8%;
     background-color: wheat;
 }
@@ -611,6 +539,8 @@ footer {
     margin-bottom: 30px;
     transition: transform 0.5s, background 0.5s;
     display: flex;
+    flex-direction: column; /* Change to column for mobile */
+    align-items: center; /* Center align items for better mobile layout */
 }
 
 .subvg:hover {
@@ -638,22 +568,56 @@ footer {
     max-width: 100%;
     width: 200px;
     height: 200px;
-    margin-right: 20px;
-
+    margin-bottom: 20px; /* Adjusted for better spacing */
 }
 
 .subvg p {
     font-size: 16px;
     line-height: 1.6;
+    text-align: center; /* Center text for better readability on mobile */
 }
 
 .contentvg {
     display: flex;
     align-items: center;
+    flex-direction: column; /* Change to column for mobile */
 }
 
 .textvg {
     flex-grow: 1;
+    text-align: center; /* Center text for better readability on mobile */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .Vegetablespage {
+        padding: 0 4%;
+    }
+
+    .Vegetablespage h1 {
+        font-size: 2rem;
+    }
+
+    .subvg {
+        padding: 20px;
+    }
+
+    .subvg img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .subvg p {
+        font-size: 14px;
+    }
+
+    .contentvg {
+        flex-direction: column;
+    }
+
+    .textvg {
+        text-align: center;
+    }
 }
 
 .product-grid {
@@ -791,25 +755,6 @@ main {
         padding: 8px 16px;
     }
 }
-
-@media (max-width: 480px) {
-    header {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    .product-box, .product-box img, .product-box p, .product-box .price, .order-link {
-        font-size: 0.9em;
-    }
-
-    .product-box img {
-        width: 60px;
-    }
-}
-
 
 /*Loyaltypage*/
 .container {
