@@ -125,7 +125,8 @@ header {
   
 }
 
-/* Main Banner */
+
+/* Main Page */
 .banner {
     width: 100%;
     height: 70vh;
@@ -154,113 +155,277 @@ header {
 
 .banner p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.shop button {
-    font-size: 1rem;
-    padding: 10px 20px;
+button {
+    width: 200px;
+    padding: 15px 0px;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid seagreen;
+    background: transparent;
     color: #fff;
-    background: seagreen;
-    border: none;
     cursor: pointer;
-    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.shop button:hover {
-    background: #333;
+span {
+    background: seagreen;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+button:hover {
+    border: none;
 }
 
 /* Services Section */
-.services-section {
-    padding: 60px 20px;
-    text-align: center;
+.services {
+    width: 100%;
+    height: auto;
+    padding: 0 8%;
+    background-color: wheat;
 }
 
 .services h1 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    text-align: center;
+    padding-top: 2.5%;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
+}
+
+.services h1::after {
+    content: '';
+    background: seagreen;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .sub {
+    background-color: wheat;
+    color: black;
+    padding: 50px;
+    margin-bottom: 30px;
+    transition: transform 0.5s, background 0.5s;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
+    flex-direction: column; /* Change to column for mobile */
+}
+
+.sub:hover {
+    background-color: seagreen;
+    color: white;
+    padding: 50px;
+    margin-bottom: 30px;
+    transform: scale(1.05);
+}
+
+.sub h2 {
+    color: seagreen;
+    font-size: 24px;
+    margin-bottom: 20px;
+    transition: transform 0.5s, background 0.5s;
+}
+
+.sub:hover h2 {
+    color: wheat;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sub img {
+    max-width: 100%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px; /* Adjusted for better spacing */
+}
+
+.sub p {
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .content {
     display: flex;
     align-items: center;
+    flex-direction: column; /* Change to column for mobile */
 }
 
-.content img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 20px;
+.text {
+    flex-grow: 1;
+    text-align: center; /* Center text for better readability on mobile */
 }
 
-.content .text {
-    max-width: 600px;
-    text-align: left;
-}
-
-.content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.content p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .sub {
-        flex-direction: column;
-    }
-    .content img {
-        margin-bottom: 20px;
-        margin-right: 0;
-    }
+.p_home {
+    font-size: 20px;
 }
 
 /* Numbered List */
 .numberedlist {
-    padding: 60px 20px;
-    background: #f4f4f4;
-    text-align: center;
+    background-color: wheat;
+    padding: 50px;
+    margin-bottom: 30px;
 }
 
 .numberedlist h1 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .numberedlist ol {
     list-style-type: decimal;
-    margin: 0 auto;
-    padding: 0;
-    max-width: 600px;
-    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
 }
 
-.numberedlist ol li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.numberedlist li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #666;
 }
 
-/* Footer */
+.numberedlist strong {
+    color: #007bff;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    button {
+        width: 150px;
+        padding: 10px 0px;
+    }
+
+    .sub {
+        padding: 20px;
+    }
+
+    .sub img {
+        width: 100px;
+        height: 100px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .numberedlist {
+        padding: 20px;
+    }
+
+    .numberedlist h1 {
+        font-size: 20px;
+    }
+
+    .numberedlist li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        height: 50vh;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner h2 {
+        font-size: 1.2rem;
+    }
+
+    .banner p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 120px;
+        padding: 8px 0px;
+        font-size: 0.9rem;
+    }
+
+    .services {
+        padding: 0 4%;
+    }
+
+    .sub {
+        padding: 10px;
+    }
+
+    .sub img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .numberedlist {
+        padding: 10px;
+    }
+
+    .numberedlist h1 {
+        font-size: 18px;
+    }
+
+    .numberedlist li {
+        font-size: 12px;
+    }
+}
+
+/*footer*/
 footer {
-    background: seagreen;
-    color: white;
+    background-color: #ffffff;
+    color: #000000;
     text-align: center;
-    padding: 20px 0;
-    position: relative;
+    padding: 20px;
+    margin-top: 20px;
+    
 }
-
 
 
 
