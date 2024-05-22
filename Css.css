@@ -87,7 +87,17 @@ header {
 
 /* Media Queries for Mobile */
 @media (max-width: 768px) {
-    header{padding:20px;}
+
+    header{padding: 0 20px;
+        justify-content: flex-end;
+        height: 10%;
+    }
+
+    .icons img {
+        margin-right: 20px;
+        margin-left: 5px;
+    }
+
     .navbar {
         display: none;
         flex-direction: column;
