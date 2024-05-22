@@ -19,6 +19,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    height: 10%;
     padding: 20px 100px;
     background: seagreen;
     display: flex;
@@ -72,7 +73,7 @@ header {
     font-size: 1rem;
 }
 
-.icons img {
+.icons i {
     margin-left: 20px;
 }
 
@@ -93,7 +94,7 @@ header {
         height: 10%;
     }
 
-    .icons img {
+    .icons i {
         margin-right: 20px;
         margin-left: 5px;
     }
@@ -127,7 +128,7 @@ header {
 .banner {
     width: 100%;
     height: 70vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(Images/home1.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(Images/home\ 1.jpg);
     background-size: cover;
     background-position: center;
     color: wheat;
@@ -358,14 +359,89 @@ button:hover {
 
 
 /*footer*/
+/* Footer Styles */
 footer {
-    background-color: #ffffff;
-    color: #000000;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    
+    background: seagreen;
+    color: white;
+    padding: 30px 0;
+    font-size: 14px;
+    line-height: 1.6;
 }
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 100px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ddd;
+}
+
+.footer-section .socials a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-section .socials a:hover {
+    color: #ddd;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background: #0a6b4b;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 0 20px;
+    }
+    .footer-section {
+        flex: 100%;
+        max-width: 100%;
+        padding: 10px 0;
+    }
+    .footer-section h2 {
+        font-size: 18px;
+    }
+    .footer-section ul li {
+        font-size: 13px;
+    }
+    .footer-section .socials a {
+        font-size: 18px;
+    }
+}
+
 /*About page*/
 
 .branch-info {
@@ -629,7 +705,7 @@ footer {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    height: 450px;
+    height:auto;
     gap: 16px;
     padding: 16px;
 }
